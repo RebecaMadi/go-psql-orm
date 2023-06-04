@@ -1,0 +1,95 @@
+html{
+    background-color: #474443;
+}
+
+body{
+    margin: 0px;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+    background-color: #474443;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;    
+    align-items: center;
+}
+
+.login{
+    background-color: #332F2E;
+    box-shadow: #1A1919 1em 1em 1em 0.2em;
+    margin: 12.5%;
+    border-radius: 10px;
+    width: 500px;
+    height: 500px;
+}
+
+.logo{
+    width: "150";
+    height: "150";
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-bottom: 0%;
+}
+
+@font-face {
+    font-family: "fft";
+    src: url('fonts/Righteous-Regular.ttf');
+}
+
+.pname{
+    display: white;
+    color: white;
+    font-family: 'fft';
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 0%;
+    margin-bottom: 5%;
+    font-size:x-large;
+}
+
+.divform{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;    
+    align-items: center;
+}
+
+.btn-submit{
+    font-family: 'fft';
+    width: 150px;
+    height: 40px;
+    border-radius: 90px;
+    margin-top: 20px;
+    margin-left: 175px;
+    margin-right: 175px;
+    color: white;
+    display: white;
+    background-color: black;
+}
+
+.btn-submit:hover{
+    box-shadow: white 0.2em 0.2em 0.2em;
+}
+
+.form-content{
+    font-family: 'fft';
+    border-radius: 10px;
+    margin-bottom: 0px;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 20px;
+    width: 200px;
+    height: 30px;
+    border-color: white;
+    background-color: #332F2E;
+}
+
+p{
+    font-family: 'fft';
+    font-size:large;
+    margin: 0px;
+    color: white;
+    display: white;
+}

@@ -1,41 +1,29 @@
 package main
 
 import (
-	"database/sql"
-	"fmt"
-
-	"github.com/go-psql-orm/dbconfig"
-    _ "github.com/go-psql-orm/models"
-
-	_ "github.com/lib/pq"
+	"log"
+	"net/http"
+	"time"
+	apiTools "github.com/go-psql-orm/apitools"
+	"github.com/gorilla/mux"
 )
 
-var db *sql.DB
-var user dbconfig.Users;
-var err error
 
 func main() {
-
-    name := "Nome"
-    email := "nome@gmail.com"
-    password := "123456789"
-    usertype := 1;
-
-    user.Name = name
-    user.Email = email
-    user.Password = password
-    user.UserType = usertype
-
-	fmt.Printf("Accessing %s ... ", dbconfig.DbName)
-
-	db, err = sql.Open(dbconfig.PostgresDriver, dbconfig.DataSourceName)
-
-	if err != nil {
-		panic(err.Error())
-	} else {
-		fmt.Println("Connected!")
+	//Cria o roteador
+	router := mux.NewRouter()
+	spa := apiTools.SpaHandler{StaticPath: "src", IndexPath: "index.html"}
+	
+	apiTools.HandlersHandle(router, spa)
+	
+	//Dados do servidor
+	srv := &http.Server{
+		Handler: router,
+		Addr:    "127.0.0.1:8000",
+		WriteTimeout: 15 * time.Second,
+		ReadTimeout:  15 * time.Second,
 	}
 
-	defer db.Close()
-
+	//Encerra a execução se tiver erro
+	log.Fatal(srv.ListenAndServe())
 }
