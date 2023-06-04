@@ -1,9 +1,9 @@
 # go-psql-orm
 
-**Aprendizados**
+**Aprendizados:**
 Os aprendizados dessa semana foram sobre a utilização do postgres e a conexão dele com o go. O projeto ainda não usa a lib gorm, mas é algo que eu pretendo atualizar, no primeiro momento foquei em deixar funcional. Outros aprendizados interessantes foram sobre o go mod e sobre a manipulação de pacotes no Go.
 
-**Sobre o Projeto**
+**Sobre o Projeto:**
 Conexão da API de login com o banco de dados.
 
 No projeto foram utilizados HTML, Go e Postgres.
